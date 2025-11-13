@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Birthday Letter 💌</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(to bottom right, #7e3e77, #93467d, #7b3d8b);
+      color: #222;
+      font-family: "Poppins", sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 2.5rem;
+      color: #f7f5f6;
+      text-shadow: 0 0 15px #ff80c0, 0 0 30px #ff99cc;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ff66cc, 0 0 20px #ff33aa;
+      }
+      to {
+        text-shadow: 0 0 20px #ff99ff, 0 0 40px #ff33cc;
+      }
+    }
+
+    .letter-box {
+      width: 60%;
+      max-width: 700px;
+      margin: 60px auto;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: justify;
+      overflow-y: auto;
+      height: 300px;
+      backdrop-filter: blur(8px);
+      z-index: 2;
+      position: relative;
+    }
+
+    /* Petal animation styling */
+    .petal {
+      position: fixed;
+      top: -10px;
+      border-radius: 50%;
+      opacity: 0.8;
+      background: pink;
+      animation: fall 8s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>💖 Happy Birthday My Love 💖</h1>
+
+  <div class="letter-box">
+    <p>My Dearest,</p>
+    <p>
+      On this special day, I just want to remind you how much you mean to me.
+      Every moment with you feels magical, and your smile is the reason my
+      world feels brighter. You’ve filled my life with love, laughter, and warmth
+      that no words can fully express.
+    </p>
+    <p>
+      May your day be as beautiful as your heart — full of love, joy, and little surprises.
+      You are my favorite part of every day. I’m endlessly grateful for you.
+    </p>
+    <p>Forever yours,<br><b>💌 Thomassss</b></p>
+  </div>
+
+  <script>
+    // Create soft falling petals across full width
+    const numPetals = 30;
+    for (let i = 0; i < numPetals; i++) {
+      const petal = document.createElement("div");
+      petal.classList.add("petal");
+      document.body.appendChild(petal);
+
+      // Random starting position and animation properties
+      const size = Math.random() * 10 + 10;
+      petal.style.width = `${size}px`;
+      petal.style.height = `${size}px`;
+      petal.style.left = Math.random() * 100 + "vw";
+      petal.style.animationDuration = 5 + Math.random() * 4 + "s";
+      petal.style.animationDelay = Math.random() * 5 + "s";
+      petal.style.background = `hsl(${Math.random() * 30 + 330}, 70%, 80%)`;
+    }
+  </script>
+</body>
+</html>
